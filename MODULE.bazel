@@ -4,3 +4,10 @@
 #
 # For more details, please check https://github.com/bazelbuild/bazel/issues/18958
 ###############################################################################
+
+module(
+    name = "com_github_google_flatbuffers",
+    version = "24.3.25",
+)
+
+bazel_dep(name = "platforms", version = "0.0.10")

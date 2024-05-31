@@ -5,8 +5,6 @@
 Rules for building C++ flatbuffers with Bazel.
 """
 
-load("@rules_cc//cc:defs.bzl", "cc_library")
-
 TRUE_FLATC_PATH = "@com_github_google_flatbuffers//:flatc"
 
 DEFAULT_INCLUDE_PATHS = [
@@ -250,7 +248,7 @@ def flatbuffer_cc_library(
         reflection_name = reflection_name,
         reflection_visibility = visibility,
     )
-    cc_library(
+    native.cc_library(
         name = name,
         hdrs = [
             ":" + srcs_lib,
