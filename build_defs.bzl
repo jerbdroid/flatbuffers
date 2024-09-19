@@ -90,6 +90,9 @@ def flatbuffer_library_public(
         include_paths = default_include_paths(flatc_path)
     include_paths_cmd = ["-I %s" % (s) for s in include_paths]
 
+    include_paths_cmd.append("-I external/gravity/")  # TODO: fix this hack
+    include_paths_cmd.append("-I external/gravity~override/")  # TODO: fix this hack
+
     extra_env = extra_env or ""
 
     # '$(@D)' when given a single source target will give the appropriate
